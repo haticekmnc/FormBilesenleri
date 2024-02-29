@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>JSF Form Bileşenler Ve Managed Beans</title>
+    </h:head>
+    <h:body>
+        <!-- form etiketi-->
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputText value="İsim- soyisim giriniz:"/>
+                <h:inputText value="#{managedBeanSinifi.isimSoyisim}"/>
+                
+                <h:outputText value="Cinsiyetiniz Nedir?"/>
+                <h:selectManyCheckbox value="#{managedBeanSinifi.cinsiyet}">
+                    <f:selectItem itemLabel="Bayan" itemValue="Bayan"/>
+                    <f:selectItem itemLabel="Erkek" itemValue="Erkek"/>
+                </h:selectManyCheckbox>
+                
+                <h:outputText value="Ehliyetiniz Var mı?"/>
+                <h:selectOneRadio value="#{managedBeanSinifi.ehliyetVarMi}">
+                    <f:selectItem itemLabel="Evet" itemValue="Evet"/>
+                    <f:selectItem itemLabel="Hayır" itemValue="Hayır"/>
+                </h:selectOneRadio>
+                
+                <h:outputText value="Adres Giriniz:"/>
+                <h:inputTextarea value="#{managedBeanSinifi.adres}"/>
+                
+                <h:outputText value="İl Seçiniz:"/>
+                <h:selectOneMenu value="#{managedBeanSinifi.il}">
+                    <f:selectItem itemLabel="İstanbul" itemValue="İstanbul"/>
+                    <f:selectItem itemLabel="Konya" itemValue="Ankara"/>                              
+                </h:selectOneMenu>
+                
+                <h:outputText value="JSF Resmi"/>
+                <h:graphicImage library="images" name="jsf.png"/>
+                
+                <h:outputText value="Parola Giriniz:"/>
+                <h:inputSecret value="#{managedBeanSinifi.parola}"/>
+                
+                <h:outputText value="Buton İle Verilerin Gönderimi"/>
+                <h:commandButton value="GÖNDER"/>
+                
+                <h:outputText value="Link İle Verilerin Gönderimi"/>
+                <h:commandButton value="GÖNDER"/>
+                
+                <h:outputText value="OutputLink Kullanımı"/>
+                <h:outputLink value="http://www.google.com">GOOGLE</h:outputLink>
+                
+                <h:outputText value="Verdiğiniz Bilgilerin Doğruluğunu Kabul Ediyor Musunuz?"/>
+                <h:selectBooleanCheckbox value="#{managedBeanSinifi.kabulEdildiMi}"/>                      
+            </h:panelGrid>
+            
+            <h:panelGrid columns="1">
+                <h3>Girdiğiniz Bilgiler</h3>
+                <h:outputText value="#{managedBeanSinifi.mesaj}" style="color: red"/>
+                <h:outputText value="#{managedBeanSinifi.isimSoyisim}"/>
+                <h:outputText value="#{managedBeanSinifi.cinsiyet}"/>
+                <h:outputText value="#{managedBeanSinifi.ehliyetVarMi}"/>
+                <h:outputText value="#{managedBeanSinifi.il}"/>
+                <h:outputText value="#{managedBeanSinifi.adres}"/>
+                <h:outputText value="#{managedBeanSinifi.parola}"/>                          
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
